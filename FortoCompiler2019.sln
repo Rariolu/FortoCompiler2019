@@ -5,6 +5,8 @@ VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FortoCompiler2019", "FortoCompiler2019\FortoCompiler2019.csproj", "{B9F16FEE-C354-4D0D-8F9E-4C33D46F6B70}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Compilation", "Compilation\Compilation.csproj", "{18639290-7E5F-4665-94FD-15BC2261E259}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{B9F16FEE-C354-4D0D-8F9E-4C33D46F6B70}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B9F16FEE-C354-4D0D-8F9E-4C33D46F6B70}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B9F16FEE-C354-4D0D-8F9E-4C33D46F6B70}.Release|Any CPU.Build.0 = Release|Any CPU
+		{18639290-7E5F-4665-94FD-15BC2261E259}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{18639290-7E5F-4665-94FD-15BC2261E259}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{18639290-7E5F-4665-94FD-15BC2261E259}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{18639290-7E5F-4665-94FD-15BC2261E259}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
