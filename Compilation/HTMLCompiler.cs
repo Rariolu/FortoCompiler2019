@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Diagnostics;
 using System.Linq;
 using System.Text;
@@ -9,7 +10,13 @@ namespace Compilation
 {
     public class HTMLCompiler : iCompiler
     {
-        const string chrome = "C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe";
+        string chrome
+        {
+            get
+            {
+                return ConfigurationManager.AppSettings["Chrome"];
+            }
+        }
         private HTMLCompiler()
         {
 

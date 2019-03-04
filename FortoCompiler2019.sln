@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FortoCompiler2019", "FortoC
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Compilation", "Compilation\Compilation.csproj", "{18639290-7E5F-4665-94FD-15BC2261E259}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GUI", "GUI\GUI.csproj", "{2E9E90EC-21C3-4CE3-A439-907EF6C2481F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{18639290-7E5F-4665-94FD-15BC2261E259}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{18639290-7E5F-4665-94FD-15BC2261E259}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{18639290-7E5F-4665-94FD-15BC2261E259}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2E9E90EC-21C3-4CE3-A439-907EF6C2481F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2E9E90EC-21C3-4CE3-A439-907EF6C2481F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2E9E90EC-21C3-4CE3-A439-907EF6C2481F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2E9E90EC-21C3-4CE3-A439-907EF6C2481F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

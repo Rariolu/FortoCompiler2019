@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Diagnostics;
 using System.Linq;
 using System.Text;
@@ -9,8 +10,20 @@ namespace Compilation
 {
     public class NodeCompiler : iCompiler
     {
-        const string nodeJS = "C:\\Program Files\\nodejs\\node.exe";
-        const string chrome = "C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe";
+        string nodeJS
+        {
+            get
+            {
+                return ConfigurationManager.AppSettings["NodeJS"];
+            }
+        }
+        string chrome
+        {
+            get
+            {
+                return ConfigurationManager.AppSettings["Chrome"];
+            }
+        }
         private NodeCompiler()
         {
 
