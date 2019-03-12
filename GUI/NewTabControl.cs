@@ -9,5 +9,16 @@ namespace GUI
 {
     public class NewTabControl : TabControl
     {
+        public new TabPageExtension SelectedTab
+        {
+            get
+            {
+                return base.SelectedTab as TabPageExtension;
+            }
+        }
+        public void SelectLastTab()
+        {
+            SelectedIndex = TabCount - 1;
+        }
     }
 }

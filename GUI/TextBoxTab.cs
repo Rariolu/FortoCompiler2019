@@ -5,20 +5,25 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace GUI
 {
     public class TextBoxTab : TabPageExtension
     {
-        string filePath = "";
+        //string filePath = "";
         string storedText = "";
         NewRichTextBox rtb = new NewRichTextBox();
-        public TextBoxTab(string file) : base()
+        public TextBoxTab() : base()
+        {
+            //filePath = "newPage"+TabID;
+        }
+        public TextBoxTab(string file) :base(file)
         {
             if (File.Exists(file))
             {
-                filePath = file;
-                Text = file;
+                //filePath = file;
+                //Text = file;
                 storedText = File.ReadAllText(file);
                 rtb.Text = File.ReadAllText(file);
             }
@@ -32,19 +37,52 @@ namespace GUI
             rtb.TabIndex = 0;
             rtb.TextChanged += new EventHandler(rtb_TextChanged);
             this.Controls.Add(rtb);
-            //this.Name = "textBoxtab" + namee;
-            //this.Padding = new Padding(3);
-            //this.SizeChanged += new EventHandler(textboxtab_SizeChanged);
+            this.Padding = new Padding(3);
+            this.SizeChanged += new EventHandler(textboxtab_SizeChanged);
             this.UseVisualStyleBackColor = true;
         }
-        public void ResetStoredText()
+        void ResetStoredText()
         {
             storedText = rtb.Text;
-            Text = filePath;
+            Text = FilePath;
         }
         void rtb_TextChanged(object sender, EventArgs e)
         {
-
+            if (rtb.Text != storedText)
+            {
+                Text = "*" + FilePath;
+            }
+            ChangeHappened();
+        }
+        void textboxtab_SizeChanged(object sender, EventArgs e)
+        {
+            ResetRTBSize();
+        }
+        void ResetRTBSize()
+        {
+            rtb.Size = new Size(Size.Width - 10, Size.Height - 6);
+        }
+        public override void Save()
+        {
+            File.WriteAllText(FilePath, rtb.Text);
+            ResetStoredText();
+        }
+        public override void SaveAs(string file)
+        {
+            FilePath = file;
+            Save();
+        }
+        public static string TextBoxTabDialogFilter()
+        {
+            return "Text files|*.txt|C# files|*.cs|HTML files|*.html|Javascript files|*.js";
+        }
+        public override string DialogFilter()
+        {
+            return TextBoxTabDialogFilter();
+        }
+        public override bool UnChanged()
+        {
+            return rtb.Text == storedText && PrevSaved;
         }
     }
 }

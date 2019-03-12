@@ -16,7 +16,7 @@ namespace FortoCompiler2019
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new MainForm());
+            Application.Run(MainForm.GetInstance());
             Compilation.NodeCompiler.CloseNode();
         }
     }

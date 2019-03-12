@@ -39,7 +39,9 @@ namespace Compilation
         }
         public void Compile(string[] filepaths, params object[] args)
         {
-            Run(filepaths[0],args[0].ToString());
+            string url = args.Length > 0 ? args[0].ToString() : "";
+            Run(filepaths[0], "http://localhost:8080");
+            //Run(filepaths[0],url);
         }
         void Run(string file,string url)
         {
