@@ -30,7 +30,11 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="FastColoredTextBox">
+      <HintPath>..\FortoCompiler2019\bin\Debug\FastColoredTextBox.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
@@ -42,12 +46,20 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ColouredTextBoxTab.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="NewFastColouredTextBox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="NewRichTextBox.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="NewTabControl.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="StyleUtil.cs" />
+    <Compile Include="SyntaxHighlightConfig.cs" />
     <Compile Include="TabPageExtension.cs">
       <SubType>Component</SubType>
     </Compile>

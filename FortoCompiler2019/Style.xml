@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<style>
+  <TextStyle Name="BlueStyle" ForeBrush="Blue" BackBrush="null" FontStyle="Regular"/>
+  <TextStyle Name="BoldStyle" ForeBrush="null" BackBrush="null" FontStyle="Bold"/>
+  <TextStyle Name="GrayStyle" ForeBrush="Gray" BackBrush="null" FontStyle="Regular"/>
+  <TextStyle Name="MagentaStyle" ForeBrush="Magenta" BackBrush="null" FontStyle="Regular"/>
+  <TextStyle Name="GreenStyle" ForeBrush="Green" BackBrush="null" FontStyle="Italic"/>
+  <TextStyle Name="BrownStyle" ForeBrush="Brown" BackBrush="null" FontStyle="Italic"/>
+  <TextStyle Name="MaroonStyle" ForeBrush="Maroon" BackBrush="null" FontStyle="Regular"/>
+  <Language name="CS">
+    <Highlight regex="" style="BrownStyle"/>
+    <Highlight regex="//.*$" regexoptions="Multiline" style="GreenStyle"/>
+    <Highlight regex="(/\*.*?\*/)|(/\*.*)" regexoptions="Singleline" style="GreenStyle"/>
+    <Highlight regex="(/\*.*?\*/)|(.*\*/)" regexoptions="RightToLeft" style="GreenStyle"/>
+    <Highlight regex="\b\d+[\.]?\d*([eE]\-?\d+)?[lLdDfF]?\b|\b0x[a-fA-F\d]+\b" style="MagentaStyle"/>
+    <Highlight regex="" regexoptions="Multiline" style="GrayStyle"/>
+    <Highlight regex="" style="BoldStyle"/>
+    <Highlight regex="\b(abstract|as|base|bool|break|byte|case|catch|char|checked|class|const|continue|decimal|default|delegate|do|double|else|enum|event|explicit|extern|false|finally|fixed|float|for|foreach|goto|if|implicit|in|int|interface|internal|is|lock|long|namespace|new|null|object|operator|out|override|params|private|protected|public|readonly|ref|return|sbyte|sealed|short|sizeof|stackalloc|static|string|struct|switch|this|throw|true|try|typeof|uint|ulong|unchecked|unsafe|ushort|using|virtual|void|volatile|while|add|alias|ascending|descending|dynamic|from|get|global|group|into|join|let|orderby|partial|remove|select|set|value|var|where|yield)\b|#region\b|#endregion\b" style="BlueStyle"/>
+    <FoldingMarker open="{" close="}"/>
+    <FoldingMarker open="#region\b" close="#endregion\b"/>
+    <FoldingMarker open="/\*" close="\*/"/>
+  </Language>
+</style>

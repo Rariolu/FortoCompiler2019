@@ -31,7 +31,8 @@ namespace GUI
         protected override void InitialiseComponent()
         {
             rtb.AcceptsTab = true;
-            rtb.BackColor = Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            rtb.BackColor = Color.FromArgb(255, 255, 128);
+            //(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             rtb.Font = new Font("Consolas", 25);
             rtb.Location = new Point(6, 6);
             rtb.TabIndex = 0;

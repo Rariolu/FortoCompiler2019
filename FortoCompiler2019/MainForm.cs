@@ -29,7 +29,8 @@ namespace FortoCompiler2019
         }
         void AddTextPage(string file="")
         {
-            TextBoxTab tab = String.IsNullOrEmpty(file) ? new TextBoxTab() : new TextBoxTab(file);
+            ColouredTextBoxTab tab = String.IsNullOrEmpty(file) ? new ColouredTextBoxTab() : new ColouredTextBoxTab(file);
+            //TextBoxTab tab = String.IsNullOrEmpty(file) ? new TextBoxTab() : new TextBoxTab(file);
             AddPage(tab);
         }
         void AddPage(TabPageExtension page)
@@ -130,12 +131,16 @@ namespace FortoCompiler2019
         }
         private void mnuQuit_Click(object sender, EventArgs e)
         {
+            Quit();
+            Close();
+        }
+        void Quit()
+        {
             CloseRedundantTabs();
-            //while(tbcMain.TabCount > 0)
-            //{
-            //    CloseCurrentTab();
-            //}
-            //Close();
+            while (tbcMain.TabCount > 0)
+            {
+                CloseCurrentTab();
+            }
         }
         void CloseRedundantTabs()
         {
@@ -151,6 +156,15 @@ namespace FortoCompiler2019
         private void mnuAddParam_Click(object sender, EventArgs e)
         {
 
+        }
+        private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Quit();
+        }
+        private void SyntaxLanguage_Click(object sender, EventArgs e)
+        {
+            ToolStripMenuItem mnuButton = sender as ToolStripMenuItem;
+            (tbcMain.SelectedTab as ColouredTextBoxTab).UpdateStyleConfig(mnuButton.Tag.ToString());
         }
         //private void button1_Click(object sender, EventArgs e)
         //{

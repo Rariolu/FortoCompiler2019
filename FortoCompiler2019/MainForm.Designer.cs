@@ -37,10 +37,13 @@
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
             this.mnuCloseTab = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuQuit = new System.Windows.Forms.ToolStripMenuItem();
-            this.mnuRun = new System.Windows.Forms.ToolStripMenuItem();
-            this.tbcMain = new GUI.NewTabControl();
             this.mnuEdit = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuAddParam = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuRun = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuLanguage = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuC = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuCS = new System.Windows.Forms.ToolStripMenuItem();
+            this.tbcMain = new GUI.NewTabControl();
             this.mnuMain.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -49,6 +52,7 @@
             this.mnuMain.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.mnuFile,
             this.mnuEdit,
+            this.mnuLanguage,
             this.mnuRun});
             this.mnuMain.Location = new System.Drawing.Point(0, 0);
             this.mnuMain.Name = "mnuMain";
@@ -125,23 +129,6 @@
             this.mnuQuit.Text = "Quit";
             this.mnuQuit.Click += new System.EventHandler(this.mnuQuit_Click);
             // 
-            // mnuRun
-            // 
-            this.mnuRun.Name = "mnuRun";
-            this.mnuRun.ShortcutKeys = System.Windows.Forms.Keys.F5;
-            this.mnuRun.Size = new System.Drawing.Size(40, 20);
-            this.mnuRun.Text = "Run";
-            this.mnuRun.Click += new System.EventHandler(this.mnuRun_Click);
-            // 
-            // tbcMain
-            // 
-            this.tbcMain.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tbcMain.Location = new System.Drawing.Point(0, 24);
-            this.tbcMain.Name = "tbcMain";
-            this.tbcMain.SelectedIndex = 0;
-            this.tbcMain.Size = new System.Drawing.Size(504, 345);
-            this.tbcMain.TabIndex = 0;
-            // 
             // mnuEdit
             // 
             this.mnuEdit.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -159,6 +146,47 @@
             this.mnuAddParam.Text = "Add Param";
             this.mnuAddParam.Click += new System.EventHandler(this.mnuAddParam_Click);
             // 
+            // mnuRun
+            // 
+            this.mnuRun.Name = "mnuRun";
+            this.mnuRun.ShortcutKeys = System.Windows.Forms.Keys.F5;
+            this.mnuRun.Size = new System.Drawing.Size(40, 20);
+            this.mnuRun.Text = "Run";
+            this.mnuRun.Click += new System.EventHandler(this.mnuRun_Click);
+            // 
+            // mnuLanguage
+            // 
+            this.mnuLanguage.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.mnuC});
+            this.mnuLanguage.Name = "mnuLanguage";
+            this.mnuLanguage.Size = new System.Drawing.Size(71, 20);
+            this.mnuLanguage.Text = "Language";
+            // 
+            // mnuC
+            // 
+            this.mnuC.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.mnuCS});
+            this.mnuC.Name = "mnuC";
+            this.mnuC.Size = new System.Drawing.Size(152, 22);
+            this.mnuC.Text = "C";
+            // 
+            // mnuCS
+            // 
+            this.mnuCS.Name = "mnuCS";
+            this.mnuCS.Size = new System.Drawing.Size(152, 22);
+            this.mnuCS.Tag = "CS";
+            this.mnuCS.Text = "C#";
+            this.mnuCS.Click += new System.EventHandler(this.SyntaxLanguage_Click);
+            // 
+            // tbcMain
+            // 
+            this.tbcMain.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tbcMain.Location = new System.Drawing.Point(0, 24);
+            this.tbcMain.Name = "tbcMain";
+            this.tbcMain.SelectedIndex = 0;
+            this.tbcMain.Size = new System.Drawing.Size(504, 345);
+            this.tbcMain.TabIndex = 0;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -169,6 +197,7 @@
             this.MainMenuStrip = this.mnuMain;
             this.Name = "MainForm";
             this.Text = "FortoCompiler2019";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainForm_FormClosing);
             this.mnuMain.ResumeLayout(false);
             this.mnuMain.PerformLayout();
             this.ResumeLayout(false);
@@ -191,6 +220,9 @@
         private System.Windows.Forms.ToolStripMenuItem mnuQuit;
         private System.Windows.Forms.ToolStripMenuItem mnuEdit;
         private System.Windows.Forms.ToolStripMenuItem mnuAddParam;
+        private System.Windows.Forms.ToolStripMenuItem mnuLanguage;
+        private System.Windows.Forms.ToolStripMenuItem mnuC;
+        private System.Windows.Forms.ToolStripMenuItem mnuCS;
     }
 }
 
